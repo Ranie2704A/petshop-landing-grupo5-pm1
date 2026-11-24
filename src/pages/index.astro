@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import AccountDeletionCta from '../components/AccountDeletionCta.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "PetCare HN | Sistema de Gestión Veterinaria y Cuidado de Mascotas";
+const pageDesc = "Aplicación móvil oficial de PetCare HN. Gestión de citas veterinarias, carnet de vacunación e historial clínico en tiempo real en Honduras.";
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Navbar slot="header" isHome={true} />
+  
+  <Hero />
+
+  <Features />
+
+  <section class="py-20 bg-white border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+          Preguntas Frecuentes
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-3">
+          Respuestas claras sobre PetCare HN y la seguridad de tus datos
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex items-center justify-between list-none">
+            <span>¿PetCare HN vende o comparte mis datos con terceros?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform font-black">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            <strong>No, categóricamente.</strong> En PetCare HN no comercializamos, alquilamos ni cedemos tus datos personales ni los historiales médicos de tus mascotas a empresas de publicidad ni aseguradoras. Toda la información se utiliza exclusivamente para la gestión veterinaria solicitada.
+          </p>
+        </details>
+
+        <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex items-center justify-between list-none">
+            <span>¿Cómo puedo solicitar la eliminación definitiva de mi cuenta?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform font-black">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Conforme a las directrices de Google Play, puedes hacerlo directamente desde los ajustes de la app Android (Perfil &gt; Configuración &gt; Eliminar Cuenta) o a través de nuestra página web en <a href="/eliminar-cuenta" class="text-brand-600 font-semibold underline">Eliminar Cuenta</a> mediante un correo directo sin requerir autenticación forzada.
+          </p>
+        </details>
+
+        <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex items-center justify-between list-none">
+            <span>¿Quiénes pueden utilizar PetCare HN?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform font-black">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            PetCare HN está diseñada tanto para <strong>dueños de mascotas</strong> que desean llevar el control de citas, vacunas y expedientes médicos en cualquier momento, como para <strong>clínicas y médicos veterinarios</strong> que buscan optimizar la gestión de sus consultas y brindar un servicio moderno a sus pacientes.
+          </p>
+        </details>
+
+        <details class="group p-6 rounded-2xl bg-slate-50 border border-slate-200/80 cursor-pointer">
+          <summary class="font-bold text-slate-900 flex items-center justify-between list-none">
+            <span>¿Qué permisos solicita la aplicación en Android?</span>
+            <span class="text-brand-600 group-open:rotate-180 transition-transform font-black">▼</span>
+          </summary>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Únicamente permisos para Cámara y Almacenamiento/Galería (para tomar o seleccionar la foto de la mascota o adjuntar exámenes médicos) y Notificaciones (para recordar citas y avisar sobre estados de salud). No solicitamos permisos de ubicación en segundo plano ni contactos.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <AccountDeletionCta />
+
+  <Footer slot="footer" />
+</BaseLayout>

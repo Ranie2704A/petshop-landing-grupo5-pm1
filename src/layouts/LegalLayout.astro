@@ -1,0 +1,146 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lastUpdated: string;
+  effectiveDate?: string;
+  version?: string;
+  badge?: string;
+}
+
+const {
+  title,
+  description,
+  lastUpdated,
+  effectiveDate,
+  version = '1.0.0',
+  badge = 'Cumplimiento Oficial Google Play',
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} | PetCare HN`} description={description}>
+  <Navbar slot="header" />
+
+  <header class="bg-gradient-to-b from-brand-900 via-navy-900 to-navy-950 text-white pt-28 pb-16 px-4 sm:px-6 lg:px-8 border-b border-brand-800/40 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-15 pointer-events-none">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-400 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+      <nav aria-label="Migas de pan" class="mb-6 flex items-center gap-2 text-xs sm:text-sm text-brand-200/80">
+        <a href="/" class="hover:text-white transition-colors flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          Inicio
+        </a>
+        <span>/</span>
+        <span class="text-white font-medium">Documentación Legal</span>
+        <span>/</span>
+        <span class="text-brand-300 font-semibold truncate">{title}</span>
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-400/30">
+          <svg class="w-3.5 h-3.5 text-brand-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          {badge}
+        </span>
+        <span class="text-xs text-slate-400 bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+          Versión {version}
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+        {title}
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+        {description}
+      </p>
+
+      <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-slate-300">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span>Última actualización: <strong class="text-white">{lastUpdated}</strong></span>
+        </div>
+        {effectiveDate && (
+          <div class="flex items-center gap-2 text-slate-400">
+            <span>Fecha de vigencia: <strong class="text-slate-200">{effectiveDate}</strong></span>
+          </div>
+        )}
+        <div class="flex items-center gap-2 text-brand-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <span>Página pública sin barreras de acceso</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-10 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-950 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-sm">
+        <div class="p-2.5 rounded-xl bg-teal-600 text-white shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="text-sm">
+          <h3 class="font-bold text-teal-900 text-base">Transparencia y Privacidad del Usuario</h3>
+          <p class="text-teal-800 mt-0.5">
+            Este documento describe las prácticas de seguridad y privacidad vigentes para PetCare HN. Puedes descargar, imprimir o guardar esta página en cualquier momento.
+          </p>
+        </div>
+      </div>
+
+      <article class="bg-white p-6 sm:p-10 lg:p-12 rounded-3xl shadow-sm border border-slate-200/80 prose prose-slate max-w-none 
+        prose-headings:text-slate-900 prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-24
+        prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-3 prose-h2:mt-10
+        prose-h3:text-xl prose-h3:text-brand-900 prose-h3:mt-6
+        prose-p:text-slate-700 prose-p:leading-relaxed
+        prose-li:text-slate-700
+        prose-a:text-brand-600 hover:prose-a:text-brand-700 prose-a:font-semibold prose-a:underline-offset-4
+        prose-strong:text-slate-900 prose-strong:font-semibold
+        prose-table:text-sm prose-th:bg-slate-100 prose-th:p-3 prose-td:p-3 prose-td:border-b prose-td:border-slate-100
+        prose-blockquote:border-l-4 prose-blockquote:border-brand-500 prose-blockquote:bg-brand-50/60 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-xl prose-blockquote:text-slate-800 prose-blockquote:not-italic">
+        <slot />
+      </article>
+
+      <div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-semibold text-slate-900 text-sm">¿Necesitas soporte adicional o asistencia legal?</h4>
+          <p class="text-xs text-slate-500">Nuestro equipo está listo para responder tus dudas.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a
+            href="mailto:soporte@petcarehn.com"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition shadow-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contactar Soporte
+          </a>
+          <a
+            href="/"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-sm font-semibold hover:bg-slate-200 transition"
+          >
+            Volver al Inicio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

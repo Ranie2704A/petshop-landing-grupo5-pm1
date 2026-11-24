@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="pawGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="2" width="48" height="46" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f766e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#pawGrad)" filter="url(#shadow)"/>
+  <path d="M24 36c-4.5 0-8-2.8-8-6.2 0-3.5 3.5-5.8 8-5.8s8 2.3 8 5.8c0 3.4-3.5 6.2-8 6.2z" fill="#ffffff"/>
+  <ellipse cx="16" cy="20" rx="2.8" ry="4" fill="#ffffff" transform="rotate(-15 16 20)"/>
+  <ellipse cx="21.5" cy="16" rx="2.8" ry="4" fill="#ffffff" transform="rotate(-5 21.5 16)"/>
+  <ellipse cx="27" cy="16" rx="2.8" ry="4" fill="#ffffff" transform="rotate(5 27 16)"/>
+  <ellipse cx="32.5" cy="20" rx="2.8" ry="4" fill="#ffffff" transform="rotate(15 32.5 20)"/>
+  <circle cx="36" cy="36" r="6" fill="#042f2e"/>
+  <rect x="34.8" y="32.5" width="2.4" height="7" rx="1.2" fill="#2dd4bf"/>
+  <rect x="32.5" y="34.8" width="7" height="2.4" rx="1.2" fill="#2dd4bf"/>
+</svg>

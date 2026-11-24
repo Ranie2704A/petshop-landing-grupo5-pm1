@@ -1,0 +1,116 @@
+---
+interface Props {
+  isStandalone?: boolean;
+}
+
+const { isStandalone = false } = Astro.props;
+
+const mailtoSubject = encodeURIComponent("Solicitud de Eliminación de Cuenta y Datos - PetCare HN");
+const mailtoBody = encodeURIComponent(`Estimado equipo de soporte y privacidad de PetCare HN,
+
+Por medio de la presente, solicito formalmente la eliminación definitiva de mi cuenta de usuario y el borrado permanente de mis datos personales asociados en PetCare HN, en conformidad con las directrices de Google Play Store.
+
+Datos de mi cuenta:
+- Correo electrónico registrado en la app: [ESCRIBE TU CORREO AQUÍ]
+- Nombre completo del titular: [ESCRIBE TU NOMBRE COMPLETO AQUÍ]
+- Motivo de la solicitud (opcional): 
+
+Confirmo que he leído y entiendo que esta acción es permanente e irreversible respecto a mis credenciales, perfiles y datos personales.
+
+Atentamente,
+[TU NOMBRE]`);
+
+const mailtoLink = `mailto:soporte@petcarehn.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+---
+
+<section id="seguridad" class="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xl shadow-slate-200/50 relative overflow-hidden">
+      
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-100 mb-8">
+        <div class="flex items-center gap-2.5">
+          <span class="p-2 rounded-xl bg-rose-50 text-rose-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+          </span>
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Directiva de Google Play: Eliminación de Cuenta y Datos</h3>
+            <p class="text-xs text-slate-500">Mecanismo público, directo y sin requerir inicio de sesión web forzado</p>
+          </div>
+        </div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Respuesta Máxima: 30 Días Hábiles
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            ¿Deseas eliminar tu cuenta y datos personales de PetCare HN?
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Tienes el control absoluto de tu información. Puedes solicitar la baja y purga total de tus datos personales en cualquier momento, ya sea desde la propia aplicación móvil Android o enviando una solicitud directa por correo electrónico.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70">
+              <span class="text-xs font-bold text-slate-800 block mb-1">🗑️ Datos que se eliminan:</span>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Perfil de usuario, credenciales Firebase, correo, número de teléfono, identificadores FCM y fotos de mascotas.
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/70">
+              <span class="text-xs font-bold text-amber-900 block mb-1">⚖️ Conservación sanitaria legal:</span>
+              <p class="text-xs text-amber-800 leading-relaxed">
+                Expedientes clínicos emitidos por veterinarios se conservan disociados/anonimizados por regulación médica veterinaria.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-navy-950 text-white p-6 sm:p-8 rounded-3xl shadow-lg border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30 mb-3">
+              Acción Rápida Web
+            </span>
+            <h4 class="text-lg font-bold text-white mb-2">Solicitar Borrado por Correo</h4>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Presiona el botón para abrir tu cliente de correo con el asunto y cuerpo prediseñados listos para enviar a nuestro equipo de soporte:
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <a
+              href={mailtoLink}
+              class="w-full flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm shadow-md hover:shadow-rose-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>Enviar Solicitud de Eliminación</span>
+            </a>
+
+            <div class="text-center">
+              <a
+                href="/eliminar-cuenta"
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-300 hover:text-white transition-colors underline underline-offset-4"
+              >
+                <span>Leer guía completa y pasos desde la app Android</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 190" width="215" height="63">
+  <rect width="646" height="190" rx="30" fill="#000000" stroke="#334155" stroke-width="4"/>
+  <g transform="translate(42, 35) scale(3.0)">
+    <path d="M7.1 2.2L27.6 23.3L22.2 28.9L3.4 3.9C4.3 2.7 5.7 2.1 7.1 2.2Z" fill="#00E676"/>
+    <path d="M27.6 23.3L7.1 44.4C5.7 44.5 4.3 43.9 3.4 42.7L22.2 17.7L27.6 23.3Z" fill="#FF3D00"/>
+    <path d="M2.5 5.5C2.2 6.5 2.0 7.6 2.0 8.7V37.9C2.0 39.0 2.2 40.1 2.5 41.1L20.3 23.3L2.5 5.5Z" fill="#29B6F6"/>
+    <path d="M37.5 19.3L29.5 24.0L24.8 19.3L34.1 14.0C35.9 13.0 37.6 14.1 37.6 16.2C37.6 17.3 37.5 18.3 37.5 19.3Z" fill="#FFC107"/>
+    <path d="M29.5 22.6L37.5 27.3C37.5 28.3 37.6 29.3 37.6 30.4C37.6 32.5 35.9 33.6 34.1 32.6L24.8 27.3L29.5 22.6Z" fill="#FF3D00"/>
+  </g>
+  <text x="210" y="68" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="2">PRÓXIMAMENTE EN</text>
+  <text x="210" y="138" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="0.5">Google Play</text>
+</svg>
